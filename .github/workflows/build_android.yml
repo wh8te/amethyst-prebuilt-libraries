@@ -16,32 +16,14 @@ jobs:
     strategy:
       matrix:
         module:
-          - module: "MobileGlues"
-            path: "renderers/MobileGlues"
           - module: "SimpleFPEWrapper"
             path: 'renderers/SimpleFPEWrapper'
-          - module: "MobileGL"
-            path: "renderers/MobileGL"
           - module: "kopper-zink"
             path: "renderers/mesa-libs/*"
-          - module: "HolyGL4ES"
-            path: "renderers/HolyGL4ES"
-          - module: "krypton_wrapper"
-            path: "renderers/krypton_wrapper"
           - module: "SDL"
             path: "SDL/*"
-          - module: "zstd-jni"
-            path: "misc/zstd-jni/zstd-jni"
           - module: "imgui-java"
             path: "misc/imgui-java"
-          - module: "arc_dns_injector"
-            path: "misc/arc_dns_injector"
-          - module: "lwjgl-build"
-            path: "misc/lwjgl-classes/* misc/openal-soft/*"
-          - module: "openal-soft"
-            path: "misc/openal-soft"
-          - module: "angle" # ANGLE needs special treatment with depot-tools
-            path: "renderers/ANGLE"
     steps:
       - name: Checkout
         uses: actions/checkout@v4

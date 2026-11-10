@@ -85,6 +85,18 @@ subprojects { subproject ->
             finalizedBy(rootProject.tasks.named('collectLibs'))
             finalizedBy(rootProject.tasks.named('collectLibLicenses'))
         }
+        // 16 KB page size: NDK 28 aligns 64-bit libraries to 16 KB by default; set it explicitly as well
+        if (subproject.plugins.hasPlugin('com.android.library')) {
+            subproject.android {
+                ndkVersion '28.2.13676358'
+                defaultConfig {
+                    externalNativeBuild {
+                        cmake { arguments '-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON' }
+                        ndkBuild { arguments 'APP_SUPPORT_FLEXIBLE_PAGE_SIZES=true' }
+                    }
+                }
+            }
+        }
         // Force SDK21 on all of them!! Except some...
         if (subproject.name != "MobileGL" &&
             subproject.plugins.hasPlugin('com.android.library')) {

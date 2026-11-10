@@ -64,7 +64,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    ndkVersion '27.3.13750724'
+    ndkVersion '28.2.13676358'
 }
 
 def updateGlslangSources = tasks.register("updateGlslangSources", Exec) {
