@@ -23,10 +23,14 @@ ndk = ndk_root + '/toolchains/llvm/prebuilt/linux-x86_64/bin'
 sysroot = ndk_root + '/toolchains/llvm/prebuilt/linux-x86_64/sysroot'
 libdrm_install_dir = '$LIBDRM_AARCH64_INSTALL_DIR'
 ar = ndk + '/llvm-ar'
-c = ['ccache', ndk + '/aarch64-linux-android' + sdk_ver + '-clang', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-Wl,-z,max-page-size=16384', '-fPIC', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
-cpp = ['ccache', ndk + '/aarch64-linux-android' + sdk_ver + '-clang++', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-Wl,-z,max-page-size=16384', '-fPIC', '-fno-exceptions', '-fno-unwind-tables', '-fno-asynchronous-unwind-tables', '-static-libstdc++', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
+c = ['ccache', ndk + '/aarch64-linux-android' + sdk_ver + '-clang', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-fPIC', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
+cpp = ['ccache', ndk + '/aarch64-linux-android' + sdk_ver + '-clang++', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-fPIC', '-fno-exceptions', '-fno-unwind-tables', '-fno-asynchronous-unwind-tables', '-static-libstdc++', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
 strip = ndk + '/llvm-strip'
 pkgconfig = ['env', 'PKG_CONFIG_LIBDIR=' + libdrm_install_dir + '/lib/pkgconfig', 'pkg-config']
+
+[built-in options]
+c_link_args = ['-Wl,-z,max-page-size=16384']
+cpp_link_args = ['-Wl,-z,max-page-size=16384']
 
 [host_machine]
 system = 'android'
@@ -45,10 +49,14 @@ ndk = ndk_root + '/toolchains/llvm/prebuilt/linux-x86_64/bin'
 sysroot = ndk_root + '/toolchains/llvm/prebuilt/linux-x86_64/sysroot'
 libdrm_install_dir = '$LIBDRM_ARMV7A_INSTALL_DIR'
 ar = ndk + '/llvm-ar'
-c = ['ccache', ndk + '/armv7a-linux-androideabi' + sdk_ver + '-clang', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-Wl,-z,max-page-size=16384', '-fPIC', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
-cpp = ['ccache', ndk + '/armv7a-linux-androideabi' + sdk_ver + '-clang++', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-Wl,-z,max-page-size=16384', '-fPIC', '-fno-exceptions', '-fno-unwind-tables', '-fno-asynchronous-unwind-tables', '-static-libstdc++', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
+c = ['ccache', ndk + '/armv7a-linux-androideabi' + sdk_ver + '-clang', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-fPIC', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
+cpp = ['ccache', ndk + '/armv7a-linux-androideabi' + sdk_ver + '-clang++', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-fPIC', '-fno-exceptions', '-fno-unwind-tables', '-fno-asynchronous-unwind-tables', '-static-libstdc++', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
 strip = ndk + '/llvm-strip'
 pkgconfig = ['env', 'PKG_CONFIG_LIBDIR=' + libdrm_install_dir + '/lib/pkgconfig', 'pkg-config']
+
+[built-in options]
+c_link_args = ['-Wl,-z,max-page-size=16384']
+cpp_link_args = ['-Wl,-z,max-page-size=16384']
 
 [host_machine]
 system = 'android'
@@ -67,10 +75,14 @@ ndk = ndk_root + '/toolchains/llvm/prebuilt/linux-x86_64/bin'
 sysroot = ndk_root + '/toolchains/llvm/prebuilt/linux-x86_64/sysroot'
 libdrm_install_dir = '$LIBDRM_X86_INSTALL_DIR'
 ar = ndk + '/llvm-ar'
-c = ['ccache', ndk + '/i686-linux-android' + sdk_ver + '-clang', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-Wl,-z,max-page-size=16384', '-fPIC', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
-cpp = ['ccache', ndk + '/i686-linux-android' + sdk_ver + '-clang++', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-Wl,-z,max-page-size=16384', '-fPIC', '-fno-exceptions', '-fno-unwind-tables', '-fno-asynchronous-unwind-tables', '-static-libstdc++', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
+c = ['ccache', ndk + '/i686-linux-android' + sdk_ver + '-clang', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-fPIC', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
+cpp = ['ccache', ndk + '/i686-linux-android' + sdk_ver + '-clang++', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-fPIC', '-fno-exceptions', '-fno-unwind-tables', '-fno-asynchronous-unwind-tables', '-static-libstdc++', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
 strip = ndk + '/llvm-strip'
 pkgconfig = ['env', 'PKG_CONFIG_LIBDIR=' + libdrm_install_dir + '/lib/pkgconfig', 'pkg-config']
+
+[built-in options]
+c_link_args = ['-Wl,-z,max-page-size=16384']
+cpp_link_args = ['-Wl,-z,max-page-size=16384']
 
 [host_machine]
 system = 'android'
@@ -89,10 +101,14 @@ ndk = ndk_root + '/toolchains/llvm/prebuilt/linux-x86_64/bin'
 sysroot = ndk_root + '/toolchains/llvm/prebuilt/linux-x86_64/sysroot'
 libdrm_install_dir = '$LIBDRM_X86_64_INSTALL_DIR'
 ar = ndk + '/llvm-ar'
-c = ['ccache', ndk + '/x86_64-linux-android' + sdk_ver + '-clang', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-Wl,-z,max-page-size=16384', '-fPIC', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
-cpp = ['ccache', ndk + '/x86_64-linux-android' + sdk_ver + '-clang++', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-Wl,-z,max-page-size=16384', '-fPIC', '-fno-exceptions', '-fno-unwind-tables', '-fno-asynchronous-unwind-tables', '-static-libstdc++', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
+c = ['ccache', ndk + '/x86_64-linux-android' + sdk_ver + '-clang', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-fPIC', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
+cpp = ['ccache', ndk + '/x86_64-linux-android' + sdk_ver + '-clang++', '-O3', '-DVK_USE_PLATFORM_ANDROID_KHR', '-fPIC', '-fno-exceptions', '-fno-unwind-tables', '-fno-asynchronous-unwind-tables', '-static-libstdc++', '--sysroot=' + sysroot, '-ffunction-sections', '-fdata-sections', '-D_POSIX_SOURCE']
 strip = ndk + '/llvm-strip'
 pkgconfig = ['env', 'PKG_CONFIG_LIBDIR=' + libdrm_install_dir + '/lib/pkgconfig', 'pkg-config']
+
+[built-in options]
+c_link_args = ['-Wl,-z,max-page-size=16384']
+cpp_link_args = ['-Wl,-z,max-page-size=16384']
 
 [host_machine]
 system = 'android'
