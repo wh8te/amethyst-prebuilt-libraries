@@ -105,11 +105,11 @@ mkdir -p ../../jniLibs/x86_64
 mkdir -p ../../jniLibs/x86
 
 echo "Creating shared library (aarch64)"
-$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++ -I ./include/ -I $ANDROID_NDK_ROOT/sources/third_party/googletest/include/ -I $ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ --shared -std=c++17 -fPIC trace-dev.cpp properties.cpp -o ../../jniLibs/arm64-v8a/libcutils.so -llog
+$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++ -I ./include/ -I $ANDROID_NDK_ROOT/sources/third_party/googletest/include/ -I $ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ --shared -std=c++17 -fPIC -Wl,-z,max-page-size=16384 trace-dev.cpp properties.cpp -o ../../jniLibs/arm64-v8a/libcutils.so -llog
 echo "Creating shared library (armeabi-v7a)"
-$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi26-clang++ -I ./include/ -I $ANDROID_NDK_ROOT/sources/third_party/googletest/include/ -I $ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ --shared -std=c++17 -fPIC trace-dev.cpp properties.cpp -o ../../jniLibs/armeabi-v7a/libcutils.so -llog
+$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi26-clang++ -I ./include/ -I $ANDROID_NDK_ROOT/sources/third_party/googletest/include/ -I $ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ --shared -std=c++17 -fPIC -Wl,-z,max-page-size=16384 trace-dev.cpp properties.cpp -o ../../jniLibs/armeabi-v7a/libcutils.so -llog
 echo "Creating shared library (x86_64)"
-$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android26-clang++ -I ./include/ -I $ANDROID_NDK_ROOT/sources/third_party/googletest/include/ -I $ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ --shared -std=c++17 -fPIC trace-dev.cpp properties.cpp -o ../../jniLibs/x86_64/libcutils.so -llog
+$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android26-clang++ -I ./include/ -I $ANDROID_NDK_ROOT/sources/third_party/googletest/include/ -I $ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ --shared -std=c++17 -fPIC -Wl,-z,max-page-size=16384 trace-dev.cpp properties.cpp -o ../../jniLibs/x86_64/libcutils.so -llog
 echo "Creating shared library (x86)"
-$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin/i686-linux-android26-clang++ -I ./include/ -I $ANDROID_NDK_ROOT/sources/third_party/googletest/include/ -I $ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ --shared -std=c++17 -fPIC trace-dev.cpp properties.cpp -o ../../jniLibs/x86/libcutils.so -llog
+$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin/i686-linux-android26-clang++ -I ./include/ -I $ANDROID_NDK_ROOT/sources/third_party/googletest/include/ -I $ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ --shared -std=c++17 -fPIC -Wl,-z,max-page-size=16384 trace-dev.cpp properties.cpp -o ../../jniLibs/x86/libcutils.so -llog
 
